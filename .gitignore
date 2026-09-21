@@ -1,1 +1,4 @@
 ruta/al/archivo-pesado.ext
+Data/processed/
+Data/raw/
+*.gpkg
