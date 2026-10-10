@@ -22,7 +22,7 @@ Data/raw ──► EDA (3 cuadernos) ──► Data/processed ──► Uniones 
 | 4 | `Union_bases_malla_vial_adecuado.ipynb` | Recorta las capas al perímetro urbano (POT), excluye ruido (<4 m) y une puentes, semáforos y red peatonal a la malla vial con `sjoin_nearest`. | `malla_urbana_unificada.gpkg` (capas `malla_vial`, `puentes`, `semaforos`, `peatonal`) |
 | 5 | `Union_malla_siniestralidad_adecuado.ipynb` | Toma la capa `malla_vial` del cuaderno 4 y asigna cada siniestro a su vía más cercana (umbral de 30 m). No exporta archivos. | — |
 | 6 | `Union_segmentos.ipynb` | Construye el dataset final **a nivel de vía** (vía completa, sin subdividir): distancias a puente y semáforo, red peatonal asignada, conteo de siniestros y población por localidad. Calcula la tasa por 100.000 habitantes. | `segmentos_unificado.gpkg`, `segmentos_unificado.csv`, `siniestros_tasa_100k_localidad_anio.csv` |
-
+| 7 | `modelo_FDS_peatonal_organizado.ipynb` | Modelo de conteo (Poisson / Binomial Negativa) a nivel de segmento vial | — |
 
 Orden de ejecución: **1 → 2 → 3 → 4 → 5**. El cuaderno **6** es una ruta alternativa e independiente del 4 y el 5: necesita los archivos de los cuadernos 1, 2 y 3, y lee directamente el perímetro urbano y el anexo de población.
 
