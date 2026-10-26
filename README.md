@@ -105,7 +105,7 @@ La población de años no censales (todos salvo 2005 y 2018) es una **proyecció
 
 `siniestros_tasa_100k_localidad_anio.csv` contiene la tasa descriptiva de siniestros peatonales por 100.000 habitantes por localidad y año (cada siniestro se cruza con la población de su localidad en su año exacto). Es un indicador aparte, independiente del dataset por vía.
 
-## 6. Modelo (`modelo_FDS_peatonal_v4.ipynb`)
+## 6. Modelo (`modelo_FDS_peatonal.ipynb`)
 
 **Especificación.** Conteo `n_siniestros` con offset `log(long_seg_m)`. Covariables: `log1p` de las tres distancias (estandarizadas por pliegue), `ratio_cobertura_peatonal`, `MVINUMC` y dummies de `MVI_VELREG`. En el ZINB la inflación de ceros depende de la longitud estandarizada.
 
@@ -158,4 +158,4 @@ Son asociaciones, no efectos causales.
 
 ## 9. Uso de inteligencia artificial
 
-Se utilizó Claude AI como apoyo en redacción, revisión de estilo y corrección, conforme a los lineamientos de la Universidad Externado de Colombia (apartados 2.1.2.b y 2.1.2.c). El contenido, el análisis y las conclusiones son de los autores.
+Se utilizó Claude AI como apoyo en redacción, revisión de estilo y corrección, conforme a los lineamientos de la Universidad Externado de Colombia (apartados 2.1.2.a, 2.1.2.b, 2.1.2.c, 3 y 6). El contenido, el análisis y las conclusiones son de los autores.
