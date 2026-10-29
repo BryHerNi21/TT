@@ -158,4 +158,16 @@ Son asociaciones, no efectos causales.
 
 ## 9. Uso de inteligencia artificial
 
-Se utilizó Claude AI como apoyo en redacción, revisión de estilo y corrección, conforme a los lineamientos de la Universidad Externado de Colombia (apartados 2.1.2.a, 2.1.2.b, 2.1.2.c, 3 y 6). El contenido, el análisis y las conclusiones son de los autores.
+## Declaración de Uso de Inteligencia Artificial
+
+En concordancia con los *Lineamientos para el uso de Inteligencia Artificial* de la Universidad Externado de Colombia, se declara el uso de herramientas de Inteligencia Artificial Generativa durante el desarrollo del presente proyecto, estructurado según los siguientes apartados:
+
+* **Corregido con IA (Numeral 2.1.2.c):** Aplicado a la totalidad del documento (Capítulos 1 a 6) para revisión de estilo, ortotipografía, corrección sintáctica y ajuste del formato de citación APA.
+* **Redactado con IA (Numeral 2.1.2.b):** Aplicado a la Sección 3 (*Metodología*) y al Capítulo 4 (*Resultados*), como apoyo en la estructuración del texto y la fluidez conceptual de la descripción técnica.
+* **Revisado con IA (Numeral 2.1.2.a):** Aplicado a la Sección 6 (*Conclusiones y Recomendaciones*), para la verificación sintética, coherencia narrativa y pulido del estilo académico.
+
+**Herramienta y Periodo de Uso:**  
+Se empleó **Claude AI (versione Claude 5.5 Sonnet, Anthropic)** durante el periodo comprendido entre agosto de 2026 y noviembre de 2026.
+
+**Responsabilidad Autoral e Integridad Técnica:**  
+El contenido sustantivo, el procesamiento de datos geoespaciales, la formulación y calibración del modelo estadístico (ZIBN), el análisis de resultados y las conclusiones son autoría exclusiva de los investigadores. El código generado o modificado con apoyo de la herramienta fue revisado, adaptado y validado técnicamente por los autores en el entorno de desarrollo. La inteligencia artificial actuó de manera complementaria como herramienta de apoyo editorial y no como sustituto del criterio técnico y metodológico de la investigación.
