@@ -68,7 +68,16 @@ Todas las rutas están escritas en relativo y con `Data/` en mayúscula inicial;
 | `localidades_bogota.gpkg` | SDP — polígonos de localidades (columna `LocNombre`) | Cuaderno 4 |
 | `osb_demografia-poblacion-localidad.csv` | SDS / SaluData (convenio DANE-SDP), población por localidad 2005–2035 | Cuaderno 4 |
 
-Los archivos de datos no se versionan en el repositorio (ver sección 9). Descárgalos de las fuentes oficiales y colócalos con estos nombres.
+Cuatro insumos están en el repositorio, en `Data/raw/`: el Excel de siniestros de la SDM y, mediante Git LFS, `Puentes bogota.gpkg`, `red_peatonal_conexion (1).gpkg` y `semaforos_bogota.geojson` (después de clonar, ejecuta `git lfs pull` para descargar su contenido completo). Los otros seis no se versionan por su tamaño; descárgalos de estas fuentes y colócalos en `Data/raw/` con el nombre indicado:
+
+| Archivo | Descarga |
+|---|---|
+| `historico_siniestros_bogota_d_c_-.csv` | https://datosabiertos.bogota.gov.co/dataset/historico-siniestros-bogota-d-c |
+| `Malla_Vial_Integral_Bogota_D_C (3).geojson` | https://datosabiertos.bogota.gov.co/dataset/malla-vial-integral-bogota-d-c1 |
+| `perimetrourbano (1).gpkg` | https://datosabiertos.bogota.gov.co/dataset/perimetro-urbano-bogota-d-c |
+| `Loca.shp` (+ `.shx`, `.dbf`, `.prj`) | https://datosabiertos.bogota.gov.co/dataset/localidad-bogota-d-c (formato shapefile) |
+| `localidades_bogota.gpkg` | https://datosabiertos.bogota.gov.co/dataset/localidad-bogota-d-c (formato GeoPackage) |
+| `osb_demografia-poblacion-localidad.csv` | https://saludata.saludcapital.gov.co/osb/indicadores/poblacion-de-bogota-d-c-2005-2035/ |
 
 ## 4. Convenciones del proyecto
 
@@ -156,7 +165,7 @@ Las distancias están estandarizadas, de modo que sus IRR son por desviación es
 
 **Salidas en `Data/processed/modelo_fds/`:** `config.json` (parámetros, versiones, `alpha_bn`), `modelo_bn.joblib` (paquete del modelo), `predicciones_bn.csv`, `tabla_coeficientes.csv`, `validacion_cruzada.csv`, `regla_longitud.csv`, `sensibilidad_longitud_ajuste.csv` y `sensibilidad_longitud_validacion.csv`.
 
-> **Pendiente de reconciliar.** Los archivos de `modelo_fds/` se guardaron el 30-oct (α = 2,8290; devianza explicada de la BN 0,188 aleatoria / 0,186 bloques; es lo que lee `priorizacion.ipynb`), mientras que las salidas guardadas en `modelo_FDS_peatonal.ipynb` provienen de una ejecución posterior (α = 2,8297; 0,175 / 0,173, con otra definición del modelo Nulo y Python 3.13.7). El texto de conclusiones del cuaderno aún cita 18,8 % y 18,6 %. Las diferencias no cambian ninguna conclusión, pero conviene re-ejecutar el cuaderno 5 y luego el 6 antes de congelar cifras para el documento.
+> Las cifras de esta sección y de `modelo_fds/` corresponden a una ejecución completa de los cuadernos 5 y 6, desde el inicio y con el núcleo reiniciado, en el commit indicado en la sección 3.3.3 del documento.
 
 ## 7. Priorización (`priorizacion.ipynb`)
 
@@ -185,7 +194,7 @@ Se evalúan tops de 1 %, 5 % y 10 % de la red (el de C se limita a los segmentos
 
 ## 8. Requisitos y reproducibilidad
 
-- Python 3.12 (entorno conda `proyecto`; `config.json` registra 3.12.4). El cuaderno 5 también se ejecutó con Python 3.13.7 en un `.venv`. Versiones de referencia: `statsmodels` 0.14.6, `scikit-learn` 1.9.0, `pandas` 3.0.5, `numpy` 2.5.2, `geopandas` 1.1.4. El cuaderno 6 avisa si la versión de `pandas` difiere de la registrada en `config.json`.
+- Python 3.13.7. Versiones de referencia: `statsmodels` 0.14.6, `scikit-learn` 1.9.0, `pandas` 3.0.5, `numpy` 2.5.2, `geopandas` 1.1.4 (lista completa en `requirements.txt`). El cuaderno 6 avisa si la versión de `pandas` difiere de la registrada en `config.json`.
 - Paquetes principales: `geopandas`, `pandas`, `numpy`, `scipy`, `statsmodels`, `scikit-learn`, `joblib`, `matplotlib`, `matplotlib-scalebar`, `seaborn`, `openpyxl`, `libpysal`, `pyogrio`, `shapely`, `pyproj`.
 - **Atención con `requirements.txt`:** es un `pip freeze` de un entorno conda en Windows. La última línea (`zipp @ file:///C:/...`) apunta a una ruta local y fallará al instalar en otra máquina; además repite `zict` y `zipp`, y arrastra paquetes que ningún cuaderno usa (p. ej. `PyQt5`, `cvxpy`, `dask`, `bokeh`, `momepy`, `nose`). Para reproducir el entorno, instala los paquetes principales y fija las versiones de arriba.
 - Algunos cuadernos guardados muestran avisos de incompatibilidad entre NumPy 2.x y módulos compilados con NumPy 1.x (visibles en las salidas de `priorizacion.ipynb`). Si aparecen errores, usa `numpy<2` o actualiza los paquetes afectados.
@@ -195,7 +204,7 @@ Se evalúan tops de 1 %, 5 % y 10 % de la red (el de C se limita a los segmentos
 ## 9. Control de versiones
 
 - Ramas: `main` y `v2` (rama de trabajo actual).
-- `.gitattributes` registra `*.gpkg`, `*.geojson` y `*.shp` en Git LFS, y `.gitignore` excluye `Data/raw/`, `Data/processed/`, `BackUp/` y `*.gpkg` (más una línea de ejemplo, `ruta/al/archivo-pesado.ext`, que puede borrarse). Los datos se regeneran con los cuadernos a partir de las fuentes de la sección 3.
+- `.gitattributes` registra `*.gpkg`, `*.geojson` y `*.shp` en Git LFS, y `.gitignore` excluye `Data/raw/`, `Data/processed/`, `BackUp/` y `*.gpkg` (más una línea de ejemplo, `ruta/al/archivo-pesado.ext`, que puede borrarse). Los cuatro insumos de `Data/raw/` que sí están en el repositorio se agregaron de forma explícita (sección 3); los demás datos se regeneran con los cuadernos a partir de las fuentes de esa sección.
 
 ## 10. Uso de inteligencia artificial
 
