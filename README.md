@@ -127,16 +127,16 @@ La población de años no censales (todos salvo 2005 y 2018) es una **proyecció
 
 **Especificación.** Conteo `n_siniestros` con `log(long_seg_m)` como **covariable libre** (`LONGITUD_LIBRE = True`), no como offset. Covariables: `log1p` de las tres distancias (estandarizadas por pliegue), `ratio_cobertura_peatonal`, `MVINUMC` y dummies de `MVI_VELREG` (en la práctica `vel_60`). En el ZINB la inflación de ceros depende de la longitud estandarizada. El modelo Nulo usa intercepto y `log(longitud)`.
 
-**Verificación de la BN.** El `alpha` se estima por perfil de verosimilitud (no depende del optimizador de `statsmodels`). Resultado: α ≈ 2,83; razón de verosimilitud Poisson vs BN ≈ 9.954 (p < 0,001 con corrección de frontera); Pearson/gl pasa de 1,665 (Poisson) a 1,164 (BN). Hay sobredispersión y la BN es el modelo base.
+**Verificación de la BN.** El `alpha` se estima por perfil de verosimilitud (no depende del optimizador de `statsmodels`). Resultado: α ≈ 2,83; razón de verosimilitud Poisson vs BN ≈ 9.951 (p < 0,001 con corrección de frontera); Pearson/gl pasa de 1,665 (Poisson) a 1,165 (BN). Hay sobredispersión y la BN es el modelo base.
 
-**Regla de decisión (declarada de antemano).** El ZINB reemplaza a la BN solo si la base es BN, mejora el BIC, mejora log-score y devianza fuera de muestra, y todos los ajustes convergen. El ZINB **no** mejora el BIC (99.595 frente a 99.577) ni el log-score ni la devianza, por lo que el **modelo final es la BN**. La priorización (cuaderno 6) exige la BN y falla si el modelo final es otro.
+**Regla de decisión (declarada de antemano).** El ZINB reemplaza a la BN solo si la base es BN, mejora el BIC, mejora log-score y devianza fuera de muestra, y todos los ajustes convergen. El ZINB **no** mejora el BIC (99.594 frente a 99.576) ni el log-score ni la devianza, por lo que el **modelo final es la BN**. La priorización (cuaderno 6) exige la BN y falla si el modelo final es otro.
 
 | Modelo | Parámetros | AIC | BIC |
 |---|---|---|---|
 | Nulo | 2 | 126.366,1 | 126.385,7 |
-| Poisson | 8 | 109.441,4 | 109.519,7 |
-| **BN** | 9 | **99.489,1** | **99.577,2** |
-| ZINB | 11 | 99.487,5 | 99.595,1 |
+| Poisson | 8 | 109.437,6 | 109.515,9 |
+| **BN** | 9 | **99.488,3** | **99.576,4** |
+| ZINB | 11 | 99.486,8 | 99.594,5 |
 
 **Longitud: libre frente a offset (sección 11 del cuaderno).** Con `log(longitud)` como covariable libre la elasticidad es 0,504 (IC 95 % agrupado 0,462–0,547), no 1 como supone el offset (LR = 1.278 en la BN, p ≈ 7·10⁻²⁸⁰). La especificación libre mejora BIC, log-score y devianza por bloques en BN y ZINB, y es la que se adopta. **La decisión se tomó después de ver esta sensibilidad y el texto de la tesis debe declararlo.**
 
@@ -148,13 +148,13 @@ La población de años no censales (todos salvo 2005 y 2018) es una **proyecció
 
 | Variable | IRR | IC 95 % |
 |---|---|---|
-| `dist_puente_peatonal_m` | 0,980 | 0,938 – 1,024 (no significativo) |
+| `dist_puente_peatonal_m` | 0,980 | 0,938 – 1,025 (no significativo) |
 | `dist_puente_vehicular_m` | 1,082 | 1,036 – 1,131 |
 | `dist_semaforo_m` | 0,781 | 0,744 – 0,819 |
-| `ratio_cobertura_peatonal` | 2,022 | 1,925 – 2,123 |
-| `MVINUMC` | 1,238 | 1,178 – 1,301 |
+| `ratio_cobertura_peatonal` | 2,021 | 1,925 – 2,123 |
+| `MVINUMC` | 1,241 | 1,179 – 1,306 |
 | `log_long` (elasticidad) | 1,656 (coef. 0,504) | 1,587 – 1,728 |
-| `vel_60` | 1,414 | 1,283 – 1,557 |
+| `vel_60` | 1,409 | 1,279 – 1,553 |
 
 Las distancias están estandarizadas, de modo que sus IRR son por desviación estándar de `log1p(distancia)`. Son asociaciones, no efectos causales; sin exposición peatonal real, la cobertura actúa como proxy de actividad.
 
