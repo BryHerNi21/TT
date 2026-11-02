@@ -208,14 +208,17 @@ Se evalúan tops de 1 %, 5 % y 10 % de la red (el de C se limita a los segmentos
 
 ## 10. Uso de inteligencia artificial
 
-En concordancia con los *Lineamientos para el uso de Inteligencia Artificial* de la Universidad Externado de Colombia, se declara el uso de herramientas de Inteligencia Artificial Generativa durante el desarrollo del presente proyecto, estructurado según los siguientes apartados:
+En concordancia con los Lineamientos para el uso de Inteligencia Artificial de la Universidad Externado de Colombia, se declara el uso de herramientas de Inteligencia Artificial Generativa durante el desarrollo del presente trabajo, detallado por categorías y capítulos de la siguiente manera:
 
-* **Corregido con IA (Numeral 2.1.2.c):** Aplicado a la totalidad del documento (Capítulos 1 a 6) para revisión de estilo, ortotipografía, corrección sintáctica y ajuste del formato de citación APA.
-* **Redactado con IA (Numeral 2.1.2.b):** Aplicado a la Sección 3 (*Metodología*) y al Capítulo 4 (*Resultados*), como apoyo en la estructuración del texto y la fluidez conceptual de la descripción técnica.
-* **Revisado con IA (Numeral 2.1.2.a):** Aplicado a la Sección 6 (*Conclusiones y Recomendaciones*), para la verificación sintética, coherencia narrativa y pulido del estilo académico.
+Corregido con IA (Numeral 2.1.2.c): aplicado a la totalidad del documento (Capítulos 1 a 5) para la revisión ortotipográfica, la corrección sintáctica y el ajuste de puntuación y del formato de citación APA.
 
-**Herramienta y periodo de uso:**
-Se empleó **Claude AI (versión Claude Sonnet 5.5, Anthropic)** durante el periodo comprendido entre agosto de 2026 y noviembre de 2026.
+Redactado con IA (Numeral 2.1.2.b): aplicado a los Capítulos 3 y 4, como apoyo para la estructuración del texto, la fluidez conceptual de la descripción metodológica y la presentación formal de los hallazgos cuantitativos.
+
+Revisado con IA (Numeral 2.1.2.a): aplicado al Capítulo 5 (Conclusiones y Recomendaciones), para la verificación de estilo, la síntesis académica y la coherencia narrativa final.
+
+Herramienta y periodo de uso: se empleó la herramienta Claude AI (versión Claude Sonnet 5.5, Anthropic) durante el periodo comprendido entre agosto de 2026 y noviembre de 2026.
+
+Responsabilidad autoral e integridad técnica: el contenido sustantivo, el análisis geoespacial y estadístico, las formulaciones de los distintos modelos, la interpretación y las conclusiones fueron desarrollados de manera autónoma por los autores, quienes realizaron la revisión y validación crítica del contenido final. Asimismo, el código generado o modificado con apoyo de estas herramientas fue revisado, adaptado y validado en el entorno de desarrollo local por los autores de acuerdo con las necesidades metodológicas del estudio. La selección de los métodos, variables, parámetros, procedimientos de análisis y resultados obtenidos corresponde exclusivamente a los autores. La inteligencia artificial se utilizó estrictamente como herramienta de apoyo y no como sustituto del criterio técnico, científico y metodológico empleado en el trabajo.
 
 **Responsabilidad autoral e integridad técnica:**
 El contenido sustantivo, el procesamiento de datos geoespaciales, la formulación y calibración del modelo estadístico (binomial negativa), el análisis de resultados y las conclusiones son autoría exclusiva de los investigadores. El código generado o modificado con apoyo de la herramienta fue revisado, adaptado y validado técnicamente por los autores en el entorno de desarrollo. La inteligencia artificial actuó de manera complementaria como herramienta de apoyo editorial y no como sustituto del criterio técnico y metodológico de la investigación.
