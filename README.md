@@ -215,7 +215,7 @@ En concordancia con los *Lineamientos para el uso de Inteligencia Artificial* de
 * **Revisado con IA (Numeral 2.1.2.a):** Aplicado a la Sección 6 (*Conclusiones y Recomendaciones*), para la verificación sintética, coherencia narrativa y pulido del estilo académico.
 
 **Herramienta y periodo de uso:**
-Se empleó **Claude AI (versión Claude 5.5 Sonnet, Anthropic)** durante el periodo comprendido entre agosto de 2026 y noviembre de 2026.
+Se empleó **Claude AI (versión Claude Sonnet 5.5, Anthropic)** durante el periodo comprendido entre agosto de 2026 y noviembre de 2026.
 
 **Responsabilidad autoral e integridad técnica:**
 El contenido sustantivo, el procesamiento de datos geoespaciales, la formulación y calibración del modelo estadístico (binomial negativa), el análisis de resultados y las conclusiones son autoría exclusiva de los investigadores. El código generado o modificado con apoyo de la herramienta fue revisado, adaptado y validado técnicamente por los autores en el entorno de desarrollo. La inteligencia artificial actuó de manera complementaria como herramienta de apoyo editorial y no como sustituto del criterio técnico y metodológico de la investigación.
