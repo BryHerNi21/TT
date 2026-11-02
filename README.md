@@ -194,7 +194,7 @@ Se evalúan tops de 1 %, 5 % y 10 % de la red (el de C se limita a los segmentos
 
 ## 8. Requisitos y reproducibilidad
 
-- Python 3.13.7. Versiones de referencia: `statsmodels` 0.14.6, `scikit-learn` 1.9.0, `pandas` 3.0.5, `numpy` 2.5.2, `geopandas` 1.1.4 (lista completa en `requirements.txt`). El cuaderno 6 avisa si la versión de `pandas` difiere de la registrada en `config.json`.
+- Python 3.12.4. Versiones de referencia: `statsmodels` 0.14.6, `scikit-learn` 1.9.0, `pandas` 3.0.5, `numpy` 2.5.2, `geopandas` 1.1.4 (lista completa en `requirements.txt`). El cuaderno 6 avisa si la versión de `pandas` difiere de la registrada en `config.json`.
 - Paquetes principales: `geopandas`, `pandas`, `numpy`, `scipy`, `statsmodels`, `scikit-learn`, `joblib`, `matplotlib`, `matplotlib-scalebar`, `seaborn`, `openpyxl`, `libpysal`, `pyogrio`, `shapely`, `pyproj`.
 - **Atención con `requirements.txt`:** es un `pip freeze` de un entorno conda en Windows. La última línea (`zipp @ file:///C:/...`) apunta a una ruta local y fallará al instalar en otra máquina; además repite `zict` y `zipp`, y arrastra paquetes que ningún cuaderno usa (p. ej. `PyQt5`, `cvxpy`, `dask`, `bokeh`, `momepy`, `nose`). Para reproducir el entorno, instala los paquetes principales y fija las versiones de arriba.
 - Algunos cuadernos guardados muestran avisos de incompatibilidad entre NumPy 2.x y módulos compilados con NumPy 1.x (visibles en las salidas de `priorizacion.ipynb`). Si aparecen errores, usa `numpy<2` o actualiza los paquetes afectados.
